@@ -22,4 +22,9 @@ set(CMAKE_CXX_STANDARD 17)
 # note: this must happen before project() 
 include(.pico_sdk_import.cmake) 
 
-project($name C CXX ASM) " >> CMakeLists.txt
+project($name C CXX ASM) 
+
+# initialize the Raspberry Pi Pico SDK
+pico_sdk_init()
+
+# rest of your project" >> CMakeLists.txt
