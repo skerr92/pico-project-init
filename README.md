@@ -2,16 +2,15 @@
 
 The goal of this script is to make it easy to generate new RP2040 projects from the commandline. While there is a great GUI tool from Raspberry Pi,
 this simply creates the basic framework for your project to get started. My hope is that it helps avoid some of the confusion with setting up a new RP2040
-project from the commandline using the Pico SDK instructions.
+project from the commandline using the Pico SDK instructions. This is only designed to run on Linux and MacOS X. You can get this to run with a Linux Virtual Machine or WSL2 instance on Windows.
 
 ### Usage ###
 
 To use this script, it's important to know the parameters for this to work successfully.
 
-1. You need to make sure you clone down the [Pico SDK]() to the same directory level that your project will be stored. This script will rely on that being the case.
-2. Clone down this repo in the same directory the Pico SDK is cloned to. Then move the `init_pico_project.sh` file outside the repo directory.
-3. You will need to pass in your project name as an argument into the shell script `./init_pico_project.sh my_projects` 
-4. finally, `cd my_project` and type `ls` to make sure there is a `CMakeLists.txt` and `pico_sdk_import.cmake` file in the project directory.
+1. Clone down this repo in the directory you want your project in. Then move the `init_pico_project.sh` file outside the repo directory. You can do this in a file explorer or by doing `cp pico-project-init/init-pico-project.sh .` You may need to change permissions on the file for it to run, you can do this by doing `chmod +x init-pico-project.sh`.
+2. You will need to pass in your project name as an argument into the shell script `./init_pico_project.sh my_projects` 
+3. finally, `cd my_project` and type `ls` to make sure there is a `CMakeLists.txt`, `pico_sdk_import.cmake` , and a C file that holds your projects name so like `my_projects.c` in the project directory.
 
 You're now good to go on your pico project!
 
